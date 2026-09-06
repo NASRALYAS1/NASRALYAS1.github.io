@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nasr Alyas Hassan — Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --paper: #F4F6F9;
+    --surface: #FFFFFF;
+    --surface-2: #EEF1F6;
+    --ink: #1A2740;
+    --slate: #55627C;
+    --muted: #7C889F;
+    --line: #DBE1EA;
+    --gold: #A9781F;
+    --gold-soft: #F3E9D4;
+    --accent: #23406E;
+    --good: #2E7D5B;
+    --shadow: 24px 24px 60px rgba(26,39,64,.07);
+    --serif: "Bricolage Grotesque", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E1524;
+      --surface: #17223A;
+      --surface-2: #1E2B47;
+      --ink: #E9EDF5;
+      --slate: #A7B3CB;
+      --muted: #7B89A6;
+      --line: #26324F;
+      --gold: #E0B65E;
+      --gold-soft: #2A2717;
+      --accent: #7FA6E0;
+      --good: #5FC79B;
+      --shadow: 24px 24px 70px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E1524;
+    --surface: #17223A;
+    --surface-2: #1E2B47;
+    --ink: #E9EDF5;
+    --slate: #A7B3CB;
+    --muted: #7B89A6;
+    --line: #26324F;
+    --gold: #E0B65E;
+    --gold-soft: #2A2717;
+    --accent: #7FA6E0;
+    --good: #5FC79B;
+    --shadow: 24px 24px 70px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background .3s ease, color .3s ease;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---- eyebrow / mono labels ---- */
+  .label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---- top bar ---- */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0 0; gap: 16px;
+  }
+  .topbar .mark {
+    font-family: var(--mono); font-size: 13px; letter-spacing: .04em;
+    color: var(--slate);
+  }
+  .topbar .mark b { color: var(--ink); font-weight: 600; }
+  .theme-btn {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--slate);
+    background: transparent; border: 1px solid var(--line);
+    padding: 7px 12px; border-radius: 999px; cursor: pointer;
+    transition: border-color .2s, color .2s;
+  }
+  .theme-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .theme-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ---- hero ---- */
+  header.hero { padding: 60px 0 40px; }
+  .hero .label { display: block; margin-bottom: 20px; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2.9rem, 8vw, 5.1rem); line-height: .98;
+    letter-spacing: -.02em; margin: 0; text-wrap: balance;
+  }
+  .hero .arabic {
+    font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--slate);
+    margin: 14px 0 0; font-weight: 400; direction: rtl;
+  }
+  .hero .lede {
+    font-size: clamp(1.05rem, 2.4vw, 1.28rem); color: var(--slate);
+    max-width: 33em; margin: 26px 0 0; line-height: 1.62;
+  }
+  .hero .lede b { color: var(--ink); font-weight: 600; }
+
+  /* ---- contact strip ---- */
+  .contact {
+    display: flex; flex-wrap: wrap; gap: 10px 28px;
+    margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  .contact a, .contact span {
+    font-family: var(--mono); font-size: 13px; color: var(--slate);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .contact a { color: var(--ink); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .contact a:hover { border-bottom-color: var(--gold); }
+  .contact .k { color: var(--gold); }
+
+  /* ---- section scaffold ---- */
+  section { padding: 46px 0; border-top: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .sec-head h2 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2rem); margin: 0; letter-spacing: -.01em;
+  }
+  .sec-head .count { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+
+  /* ---- projects ---- */
+  .project {
+    display: grid; grid-template-columns: 1fr; gap: 4px;
+    padding: 26px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--surface); margin-bottom: 18px;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .project:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .project .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .project h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; margin: 0; letter-spacing: -.01em; }
+  .project .stack { font-family: var(--mono); font-size: 11.5px; color: var(--gold); letter-spacing: .04em; text-align: right; }
+  .project .p-desc { color: var(--slate); margin: 12px 0 16px; max-width: 60ch; }
+  .project ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+  .project li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--ink); line-height: 1.5; }
+  .project li::before {
+    content: "→"; position: absolute; left: 0; top: 0;
+    font-family: var(--mono); color: var(--gold); font-size: 13px;
+  }
+  .project li .fig { font-family: var(--mono); color: var(--gold); font-weight: 500; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .tag {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
+    color: var(--slate); background: var(--surface-2);
+    padding: 4px 9px; border-radius: 4px;
+  }
+
+  /* ---- skills ---- */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 32px; }
+  .skill-group h4 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 10px; font-weight: 600;
+  }
+  .skill-group p { margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
+
+  /* ---- experience / education rows ---- */
+  .row { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-top: 1px solid var(--line); }
+  .row:first-of-type { border-top: none; }
+  .row .when { font-family: var(--mono); font-size: 12.5px; color: var(--muted); letter-spacing: .02em; padding-top: 3px; }
+  .row .what h4 { margin: 0 0 3px; font-size: 1.06rem; font-weight: 600; font-family: var(--serif); }
+  .row .what .org { color: var(--gold); font-size: 13.5px; font-family: var(--mono); }
+  .row .what p { margin: 8px 0 0; color: var(--slate); font-size: 14px; max-width: 62ch; }
+  .row .what .grade { color: var(--slate); font-size: 13px; margin-top: 8px; line-height: 1.6; }
+  .row .what .grade b { color: var(--ink); font-weight: 600; }
+
+  /* ---- footer ---- */
+  footer { padding: 54px 0 70px; border-top: 1px solid var(--line); text-align: center; }
+  footer .label { display: block; margin-bottom: 18px; }
+  footer .big {
+    font-family: var(--serif); font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.6rem);
+    letter-spacing: -.01em; margin: 0 0 22px;
+  }
+  footer a.cta {
+    font-family: var(--mono); font-size: 14px; color: var(--paper);
+    background: var(--ink); text-decoration: none; padding: 13px 26px;
+    border-radius: 999px; display: inline-block; transition: background .2s, transform .2s;
+  }
+  footer a.cta:hover { background: var(--gold); transform: translateY(-2px); }
+  footer .fine { margin-top: 30px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: .04em; }
+
+  @media (max-width: 620px) {
+    .row { grid-template-columns: 1fr; gap: 4px; }
+    .row .when { padding-top: 0; }
+    .project .stack { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <span class="mark"><b>NAH</b> · Sinjar, Iraq</span>
+    <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Theme</button>
+  </div>
+
+  <header class="hero">
+    <span class="label">Web Developer &amp; Full-Stack Programmer</span>
+    <h1>Nasr Alyas Hassan</h1>
+    <p class="arabic">ناصر الياس حسن</p>
+    <p class="lede">I build <b>practical business software end to end</b> — from the database schema and REST API to a responsive, offline-capable interface. My apps run real shops and car dealerships in Iraq: point-of-sale credit ledgers, multi-currency finance tools, and full-stack web systems.</p>
+    <nav class="contact">
+      <a href="mailto:nasralyashassan@gmail.com"><span class="k">✉</span> nasralyashassan@gmail.com</a>
+      <a href="https://github.com/NASRALYAS1" target="_blank" rel="noopener"><span class="k">❯</span> github.com/NASRALYAS1</a>
+      <a href="tel:+9647806721428"><span class="k">☎</span> +964 780 672 1428</a>
+      <span><span class="k">◉</span> Sinjar, Nineveh, Iraq</span>
+    </nav>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>Selected Work</h2>
+      <span class="count">05 / projects</span>
+    </div>
+
+    <article class="project">
+      <div class="p-top">
+        <h3>Khan Market — POS &amp; Retail Management</h3>
+        <span class="stack">Desktop app · SQLite</span>
+      </div>
+      <p class="p-desc">A complete point-of-sale and retail-management system, <span class="fig">in real daily use by a market</span>. Not a demo — barcode sales, inventory, staff and money, all in one Arabic desktop app.</p>
+      <ul>
+        <li>Barcode-driven point of sale, inventory with <span class="fig">stock value and low-stock alerts</span>, suppliers, purchases and product-expiry tracking.</li>
+        <li>Customer credit ledgers, daily cash shifts, invoices, and a dashboard of sales, profit and overdue debts.</li>
+        <li>Employees module with <span class="fig">attendance and payroll</span>, multi-user roles with an activity log, and thermal-printer (80mm) receipts.</li>
+        <li>Automatic local + off-machine backups and a data-integrity check reconciling stock, invoices and debts.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Desktop app</span><span class="tag">SQLite</span><span class="tag">POS</span><span class="tag">Inventory</span><span class="tag">Payroll</span><span class="tag">Thermal printing</span><span class="tag">RTL / Arabic</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-top">
+        <h3>Car Flip Tracker — Dealership Finance</h3>
+        <span class="stack">TypeScript · Cloudflare Workers · D1</span>
+      </div>
+      <p class="p-desc">An app to run a car-dealership business — inventory, sales, expenses, installments and inter-partner debts — with money handled in two currencies at once, on a real cloud backend.</p>
+      <ul>
+        <li>Vehicle buy/sell records with <span class="fig">automatic profit calculation</span> and per-vehicle expense tracking.</li>
+        <li>Installment-plan tracking and a debt ledger recording loans and repayments with running balances.</li>
+        <li>Live <span class="fig">US Dollar ⇄ Iraqi Dinar</span> conversion, on Cloudflare Workers with a D1 database and schema migrations.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">TypeScript</span><span class="tag">Cloudflare Workers</span><span class="tag">D1</span><span class="tag">Multi-currency</span><span class="tag">Financial logic</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-top">
+        <h3>AREN SHOW — Customer Credit &amp; Receivables</h3>
+        <span class="stack">Progressive Web App · offline-first</span>
+      </div>
+      <p class="p-desc">An installable, offline-first app that tracks customer accounts and the credit each owes — built for how shops in the region actually run their books.</p>
+      <ul>
+        <li>Offline-first: keeps working with no connection, then <span class="fig">syncs to the server</span> the moment one returns.</li>
+        <li>Automatic <span class="fig">nightly full backups</span> and a sync-code system so data follows the user across devices.</li>
+        <li>Statistics view and one-tap <span class="fig">Excel export</span> of the full ledger.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">PWA</span><span class="tag">Offline-first</span><span class="tag">Cloud sync</span><span class="tag">Excel export</span><span class="tag">RTL / Arabic</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-top">
+        <h3>TaskMaster — Full-Stack Task Manager</h3>
+        <span class="stack">PHP · MySQL · REST API</span>
+      </div>
+      <p class="p-desc">A complete task-management web app, built from the database up: accounts, a REST API, and an asynchronous front-end — with security taken seriously.</p>
+      <ul>
+        <li>User registration, login and session authentication over a relational <span class="fig">MySQL schema</span> with foreign keys and cascade deletes.</li>
+        <li>JSON REST API with correct HTTP status codes, using <span class="fig">PDO prepared statements</span> throughout to prevent SQL injection.</li>
+        <li>Tasks with categories, priorities, due dates and image uploads; front-end does async CRUD via the Fetch API.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">REST API</span><span class="tag">Auth</span><span class="tag">Secure by design</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-top">
+        <h3>Yazidi@School Website</h3>
+        <span class="stack">HTML · CSS · JS · UX/UI</span>
+      </div>
+      <p class="p-desc">The official website for an online education initiative serving Yazidi students in Sinjar — designed and built solo, for an audience on low-end phones and unreliable connections.</p>
+      <ul>
+        <li>Sole developer and designer: user research, wireframing and prototyping in Figma, visual identity, and the front-end build.</li>
+        <li>Engineered <span class="fig">mobile-first for low bandwidth</span> — a hard constraint set by the students it serves, not an afterthought.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Responsive</span><span class="tag">Accessibility</span>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Toolkit</h2>
+      <span class="count">what I build with</span>
+    </div>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <p>PHP · JavaScript · TypeScript · Python · C# · SQL · HTML · CSS</p>
+      </div>
+      <div class="skill-group">
+        <h4>Front-end</h4>
+        <p>React 19 · Vite · Progressive Web Apps · Fetch API · responsive &amp; accessible UI</p>
+      </div>
+      <div class="skill-group">
+        <h4>Back-end</h4>
+        <p>MySQL schema design · REST / JSON APIs · session auth · cloud sync &amp; backups · file uploads</p>
+      </div>
+      <div class="skill-group">
+        <h4>Design</h4>
+        <p>Figma · Adobe XD · Balsamiq · wireframing · prototyping · user-centered design</p>
+      </div>
+      <div class="skill-group">
+        <h4>Foundations</h4>
+        <p>OOP · data structures &amp; algorithms · databases · mobile programming · cryptography &amp; data security</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <span class="count">field &amp; research</span>
+    </div>
+    <div class="row">
+      <div class="when">2025</div>
+      <div class="what">
+        <h4>Enumerator <span class="org">— Welthungerhilfe (WHH)</span></h4>
+        <p>Door-to-door interviews and baseline / post-distribution / endline data collection in Sinjar using digital data-collection tools.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2023 – 2024</div>
+      <div class="what">
+        <h4>Field Researcher / Enumerator <span class="org">— IVY (Japanese NGO)</span></h4>
+        <p>Baseline and endline school surveys across multiple field contracts in Sinjar/Khanasur and Erbil, entering data into electronic tools for the NREN and JPF projects.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2023</div>
+      <div class="what">
+        <h4>Research Contributor <span class="org">— Goethe University Frankfurt</span></h4>
+        <p>Ran an interview and wrote a research note on educational trajectories in Iraq for a study funded by the German Federal Ministry of Education and Research. Received a letter of appreciation.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2023 – now</div>
+      <div class="what">
+        <h4>IT Specialist (Volunteer) <span class="org">— Yazidi@School</span></h4>
+        <p>Technical support for students accessing online resources; setting up digital classrooms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Education</h2>
+      <span class="count">degree</span>
+    </div>
+    <div class="row">
+      <div class="when">2020 – 2024</div>
+      <div class="what">
+        <h4>B.Sc. in Information Technology <span class="org">— Catholic University in Erbil</span></h4>
+        <p class="grade">Grade <b>73.58 / 100 (Good)</b> · ranked <b>3rd of 9</b> · graduation project <b>89 / 100</b>.<br>
+        Relevant coursework: Object-Oriented Programming (90), Advanced Web Programming, Databases &amp; Advanced Databases, Data Structures &amp; Algorithms, Mobile Programming I &amp; II, Practical Python, Visual Programming (C#), Cryptography &amp; Data Security, AI, Big Data.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Open to remote &amp; on-site roles</span>
+    <p class="big">Let's build something.</p>
+    <a class="cta" href="mailto:nasralyashassan@gmail.com">nasralyashassan@gmail.com</a>
+    <p class="fine">Nasr Alyas Hassan · Sinjar, Nineveh, Iraq · +964 780 672 1428</p>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    function current() {
+      var set = root.getAttribute('data-theme');
+      if (set) return set;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('nah-theme', next); } catch (e) {}
+    });
+    try {
+      var saved = localStorage.getItem('nah-theme');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
