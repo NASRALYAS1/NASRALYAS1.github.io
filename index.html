@@ -195,6 +195,8 @@
   .svc h3 { font-family: var(--serif); font-weight: 600; font-size: 1.16rem; margin: 0 0 8px; letter-spacing: -.01em; }
   .svc p { margin: 0; color: var(--slate); font-size: 14.5px; line-height: 1.55; }
   .svc .proof { margin-top: auto; padding-top: 14px; font-family: var(--mono); font-size: 11.5px; color: var(--gold); letter-spacing: .03em; }
+  .svc.wide { grid-column: 1 / -1; border-color: var(--gold); background: linear-gradient(135deg, var(--surface) 60%, var(--gold-soft)); }
+  .svc.wide p { max-width: 70ch; }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px 24px; margin-top: 30px; padding: 22px 24px; border-radius: 6px; background: var(--surface-2); }
   .step { font-size: 14px; color: var(--ink); line-height: 1.5; }
   .step .n { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--gold); margin-bottom: 4px; }
@@ -259,9 +261,14 @@
       <h2>Services</h2>
       <span class="count">online · worldwide</span>
     </div>
-    <p class="svc-intro">I take on <b>freelance software projects online</b> for anyone who needs something built: businesses, organisations, schools and individuals. Everything below is work I have already done for real users.</p>
+    <p class="svc-intro">I take on <b>freelance software projects online</b> for anyone who needs something built or automated: businesses, organisations, schools and individuals. Everything below is work I have already done for real users.</p>
 
     <div class="svc-grid">
+      <div class="svc wide">
+        <h3>Business automation</h3>
+        <p>I automate whole business processes, from the first step to the last. The work your team now does by hand, step after step, can run on its own from start to finish, so people spend their time on what actually needs them.</p>
+        <span class="proof">→ End to end: from the first step to the last</span>
+      </div>
       <div class="svc">
         <h3>Websites</h3>
         <p>Clear, fast websites designed and built from scratch, that load quickly on any phone, even on a weak connection.</p>
