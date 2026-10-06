@@ -183,6 +183,30 @@
   .row .what .grade { color: var(--slate); font-size: 13px; margin-top: 8px; line-height: 1.6; }
   .row .what .grade b { color: var(--ink); font-weight: 600; }
 
+  /* ---- services ---- */
+  .svc-intro { color: var(--slate); max-width: 62ch; margin: -12px 0 26px; }
+  .svc-intro b { color: var(--ink); font-weight: 600; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .svc {
+    padding: 22px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+    display: flex; flex-direction: column; transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .svc:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .svc h3 { font-family: var(--serif); font-weight: 600; font-size: 1.16rem; margin: 0 0 8px; letter-spacing: -.01em; }
+  .svc p { margin: 0; color: var(--slate); font-size: 14.5px; line-height: 1.55; }
+  .svc .proof { margin-top: auto; padding-top: 14px; font-family: var(--mono); font-size: 11.5px; color: var(--gold); letter-spacing: .03em; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px 24px; margin-top: 30px; padding: 22px 24px; border-radius: 6px; background: var(--surface-2); }
+  .step { font-size: 14px; color: var(--ink); line-height: 1.5; }
+  .step .n { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--gold); margin-bottom: 4px; }
+  .step span.sub { color: var(--slate); }
+  .svc-fine { margin: 16px 0 0; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .02em; }
+  .hero-cta {
+    display: inline-block; margin-top: 26px; font-family: var(--mono); font-size: 13px;
+    color: var(--paper); background: var(--ink); text-decoration: none;
+    padding: 11px 22px; border-radius: 999px; transition: background .2s, transform .2s;
+  }
+  .hero-cta:hover { background: var(--gold); transform: translateY(-2px); }
+
   /* ---- footer ---- */
   footer { padding: 54px 0 70px; border-top: 1px solid var(--line); text-align: center; }
   footer .label { display: block; margin-bottom: 18px; }
@@ -221,6 +245,7 @@
     <h1>Nasr Alyas Hassan</h1>
     <p class="arabic">ناصر الياس حسن</p>
     <p class="lede">I build <b>practical business software end to end</b> — from the database schema and REST API to a responsive, offline-capable interface. My apps run real shops and car dealerships in Iraq: point-of-sale credit ledgers, multi-currency finance tools, and full-stack web systems.</p>
+    <a class="hero-cta" href="#services">Hire me for an online project →</a>
     <nav class="contact">
       <a href="mailto:nasralyashassan@gmail.com"><span class="k">✉</span> nasralyashassan@gmail.com</a>
       <a href="https://github.com/NASRALYAS1" target="_blank" rel="noopener"><span class="k">❯</span> github.com/NASRALYAS1</a>
@@ -229,7 +254,56 @@
     </nav>
   </header>
 
-  <section>
+  <section id="services">
+    <div class="sec-head">
+      <h2>Services</h2>
+      <span class="count">online · worldwide</span>
+    </div>
+    <p class="svc-intro">I take on <b>freelance projects online</b> for schools, education initiatives, NGOs and small businesses. Everything below is work I have already done for real users, often for people on phones with slow internet.</p>
+
+    <div class="svc-grid">
+      <div class="svc">
+        <h3>Websites for schools &amp; education projects</h3>
+        <p>Clear, fast websites that work on low-end phones and weak connections, designed and built from scratch.</p>
+        <span class="proof">→ Yazidi@School website</span>
+      </div>
+      <div class="svc">
+        <h3>Custom web apps &amp; dashboards</h3>
+        <p>Tools your team logs into every day: records, tasks, finances, with a proper database and secure logins.</p>
+        <span class="proof">→ TaskMaster · Car Flip Tracker</span>
+      </div>
+      <div class="svc">
+        <h3>Sales, stock &amp; finance systems</h3>
+        <p>Point-of-sale, inventory, customer credit, payroll and debt tracking, with automatic backups.</p>
+        <span class="proof">→ Khan Market (in daily use)</span>
+      </div>
+      <div class="svc">
+        <h3>Apps that work offline</h3>
+        <p>Installable apps that keep working without internet and sync when the connection comes back.</p>
+        <span class="proof">→ AREN SHOW</span>
+      </div>
+      <div class="svc">
+        <h3>Digital forms, surveys &amp; data</h3>
+        <p>Data-collection forms, cleaning messy spreadsheets, and simple Excel reports you can actually use.</p>
+        <span class="proof">→ Field data work for WHH, IVY, UNDP/UNICEF evaluation</span>
+      </div>
+      <div class="svc">
+        <h3>Online classrooms &amp; remote IT help</h3>
+        <p>Setting up digital classrooms, fixing technical problems remotely, and training staff to use their tools.</p>
+        <span class="proof">→ Yazidi@School · Sinjar Academy</span>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="n">01 · CALL</span>A free online call to understand what you need. <span class="sub">No obligation.</span></div>
+      <div class="step"><span class="n">02 · QUOTE</span>A clear written quote and timeline <span class="sub">before any work starts.</span></div>
+      <div class="step"><span class="n">03 · BUILD</span>Regular updates while I build, <span class="sub">and you test it before handover.</span></div>
+      <div class="step"><span class="n">04 · HANDOVER</span>Delivery, a short walkthrough, <span class="sub">and support after launch.</span></div>
+    </div>
+    <p class="svc-fine">Working languages: English · Arabic · Kurdish &nbsp;·&nbsp; Write to <a href="mailto:nasralyashassan@gmail.com" style="color:inherit">nasralyashassan@gmail.com</a></p>
+  </section>
+
+  <section id="work">
     <div class="sec-head">
       <h2>Selected Work</h2>
       <span class="count">05 / projects</span>
@@ -396,7 +470,7 @@
   </section>
 
   <footer>
-    <span class="label">Open to remote &amp; on-site roles</span>
+    <span class="label">Available for online freelance projects &amp; full-time roles</span>
     <p class="big">Let's build something.</p>
     <a class="cta" href="mailto:nasralyashassan@gmail.com">nasralyashassan@gmail.com</a>
     <p class="fine">Nasr Alyas Hassan · Sinjar, Nineveh, Iraq · +964 780 672 1428</p>
