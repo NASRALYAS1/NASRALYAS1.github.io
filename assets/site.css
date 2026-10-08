@@ -285,3 +285,22 @@ footer .fine { margin-top: 30px; font-family: var(--mono); font-size: 11.5px; co
 .project .more::after { content: ""; position: absolute; inset: 0; } /* whole card is the link */
 .project.has-page:hover .more { text-decoration: underline; }
 .project .more:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ===================== client testimonials ===================== */
+.testimonial {
+  margin: 0; padding: 26px 28px; border: 1px solid var(--line); border-left: 3px solid var(--gold);
+  border-radius: 6px; background: var(--surface); max-width: 760px;
+}
+.testimonial blockquote { margin: 0; }
+.testimonial blockquote p {
+  margin: 0; font-family: var(--serif); font-weight: 600; font-size: clamp(1.1rem, 2.4vw, 1.32rem);
+  line-height: 1.45; letter-spacing: -.005em; color: var(--ink);
+}
+.testimonial .original { margin: 14px 0 0; font-size: 15px; color: var(--slate); line-height: 1.7; }
+.testimonial figcaption { margin-top: 16px; font-family: var(--mono); font-size: 12px; color: var(--gold); letter-spacing: .04em; }
+.testimonial figcaption .tr { color: var(--muted); }
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.quotes .testimonial { max-width: none; padding: 22px; display: flex; flex-direction: column; }
+.quotes .testimonial blockquote p { font-size: 1.04rem; }
+.quotes .testimonial figcaption { margin-top: auto; padding-top: 16px; }
+.quotes .testimonial figcaption a { color: inherit; }
