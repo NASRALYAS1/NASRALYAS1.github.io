@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Flip Tracker — Dealership Finance · Nasr Alyas Hassan</title>
+<meta name="description" content="A finance app for a two-partner car-trading business: every car's costs, cash and instalment sales, trades, partner shares and debts, in US dollars and Iraqi dinars. Built by Nasr Alyas Hassan.">
+<meta property="og:title" content="Car Flip Tracker — Dealership Finance">
+<meta property="og:description" content="A finance app that runs a two-partner car-trading business in two currencies. Built by Nasr Alyas Hassan.">
+<meta property="og:image" content="https://nasralyas1.github.io/assets/projects/car-flip-tracker/dashboard.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="../index.html#work">← All projects</a>
+    <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Theme</button>
+  </div>
+
+  <header class="case-hero">
+    <span class="label">TypeScript · Cloudflare Workers · D1</span>
+    <h1>Car Flip Tracker</h1>
+    <p class="sub">Finance for a car-trading business</p>
+    <p class="lede">An app that runs a <b>two-partner car-trading business</b>: what every car cost, what it sold for, who still owes instalments, and each partner's share of the profit, with money handled in <b>US dollars and Iraqi dinars at once</b>.</p>
+    <div class="facts">
+      <div class="fact"><span class="k">My role</span><span class="v">Sole developer: data model, server, interface</span></div>
+      <div class="fact"><span class="k">Type</span><span class="v">Installable web app (PWA), Arabic, on a cloud backend</span></div>
+      <div class="fact"><span class="k">Currencies</span><span class="v">US dollar &amp; Iraqi dinar, with the rate saved on every entry</span></div>
+      <div class="fact"><span class="k">Live link</span><span class="v">Private: it holds the partners' finances. Demo on request.</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <span class="count">from a phone · sample data</span>
+    </div>
+    <div class="shots phones">
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/dashboard.webp" width="480" height="1039" loading="lazy" alt="Dashboard in Arabic: profit not yet distributed with each partner's share, a button to distribute profits, capital tied up in stock, cars in stock, overdue instalments, and money still owed by buyers.">
+        <figcaption><b>Dashboard.</b> Profit waiting to be shared and each partner's part, capital tied up in stock, overdue instalments, and what buyers still owe.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/cars-sold.webp" width="480" height="1039" loading="lazy" alt="List of sold cars in Arabic, each with its profit, and tabs for cars in stock, sold and traded.">
+        <figcaption><b>Cars.</b> In stock, sold and traded, with the profit (or expected profit) on every car.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/sale-installments.webp" width="480" height="1039" loading="lazy" alt="A car's sale record in Arabic: sale price in dollars with its dinar equivalent, profit realised so far, the remaining balance on the buyer with a progress bar, the down payment, the planned monthly instalment, and the payment history.">
+        <figcaption><b>An instalment sale.</b> Price in dollars with its dinar value, profit realised so far, what the buyer still owes, and every payment received.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/installments.webp" width="480" height="1039" loading="lazy" alt="Instalments screen in Arabic listing open instalment sales, one marked as overdue in red and one as current.">
+        <figcaption><b>Instalments.</b> Every open instalment sale, with late ones flagged.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/people-debts.webp" width="480" height="1039" loading="lazy" alt="Debts screen in Arabic: totals owed to the business and owed by it, and a list of debts in dollars and dinars, each converted to the other currency.">
+        <figcaption><b>Debts.</b> Money owed to the business and by it, in either currency, each shown in the other as well.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/car-flip-tracker/reports.webp" width="480" height="1039" loading="lazy" alt="Reports screen in Arabic: net profit for the selected period with each partner's share, cars sold, average profit per car, total cost and total revenue, and the list of cars sold in the period.">
+        <figcaption><b>Reports.</b> Profit, revenue, cost and average profit per car for any period, plus how long unsold cars have been sitting in stock.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>The problem</h2>
+    </div>
+    <div class="prose">
+      <p>Two partners buy and sell cars together. A single car can be bought in dollars, repaired in dinars, sold on instalments over a year, or traded for another car that is then sold again. <b>Working out the real profit, and who owes whom, by hand quickly turns into arguments.</b></p>
+      <p>The app had to keep every number traceable back to the original entry, in the currency it was actually paid in, and give both partners the same answer.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>What I built</h2>
+    </div>
+    <ul class="feature-list">
+      <li><b>Every car's full cost:</b> purchase price plus each expense, with one-tap presets for the common ones like fuel and car washes.</li>
+      <li><b>Cash and instalment sales</b>, down payments, planned monthly instalments, partial payments and final settlements with a discount.</li>
+      <li><b>Car-for-car trades</b> followed as a full chain, so the profit lands on the right car at the end.</li>
+      <li><b>Two currencies, done properly:</b> every amount keeps its original currency and that day's exchange rate, so old records never change when the rate moves.</li>
+      <li><b>Partner shares:</b> custom profit splits, profit distributions, and debts between the partners with partial repayments.</li>
+      <li><b>Overdue reminders:</b> push notifications to the partners when an instalment is late, and an optional WhatsApp reminder to the buyer.</li>
+      <li><b>Photos of each car</b> and an automatic <b>daily backup</b> of all data to cloud storage.</li>
+      <li><b>Security:</b> hashed passwords, lock-out after repeated failed logins, a recovery code, and an optional PIN or fingerprint lock on each phone.</li>
+      <li><b>Safe by design:</b> shared records only change while online, so two partners can never create conflicting copies of the same payment. Personal debts still work offline and sync later.</li>
+    </ul>
+    <div class="tags" style="margin-top:24px">
+      <span class="tag">TypeScript</span><span class="tag">Cloudflare Workers</span><span class="tag">Hono</span><span class="tag">D1 (SQLite)</span><span class="tag">R2 storage</span><span class="tag">Web Push</span><span class="tag">PWA</span><span class="tag">Multi-currency</span><span class="tag">RTL / Arabic</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="next-proj">
+      <span class="label">Next project</span>
+      <a href="aren-show.html">AREN SHOW →</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Need something like this?</span>
+    <p class="big">Let's talk about your project.</p>
+    <a class="cta" href="mailto:nasralyashassan@gmail.com?subject=Project%20enquiry">nasralyashassan@gmail.com</a>
+    <p class="fine">The first call is free · <a href="../index.html#services" style="color:inherit">See all services</a></p>
+  </footer>
+</div>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>
