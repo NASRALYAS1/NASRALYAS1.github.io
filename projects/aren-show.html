@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AREN SHOW — Customer Credit App · Nasr Alyas Hassan</title>
+<meta name="description" content="An offline-first customer credit and receivables app for shops, built by Nasr Alyas Hassan. Works without internet, syncs automatically, backs up every night.">
+<meta property="og:title" content="AREN SHOW — Customer Credit App">
+<meta property="og:description" content="An offline-first app that replaces a shop's paper credit notebook. Built by Nasr Alyas Hassan.">
+<meta property="og:image" content="https://nasralyas1.github.io/assets/projects/aren-show/home.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="../index.html#work">← All projects</a>
+    <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Theme</button>
+  </div>
+
+  <header class="case-hero">
+    <span class="label">Progressive Web App · Offline-first</span>
+    <h1>AREN SHOW</h1>
+    <p class="sub"><span lang="ar" dir="rtl">آرين شوو</span></p>
+    <p class="lede">A customer credit app for shops that still keep their customers' debts in a paper notebook. It runs on any phone, <b>keeps working without internet</b>, and saves everything to the server on its own, with a full backup every night.</p>
+    <div class="facts">
+      <div class="fact"><span class="k">My role</span><span class="v">Sole developer: design, interface, server and sync</span></div>
+      <div class="fact"><span class="k">Type</span><span class="v">Installable web app (PWA), Arabic, right-to-left</span></div>
+      <div class="fact"><span class="k">Runs on</span><span class="v">Any phone or computer, installed from the browser</span></div>
+      <div class="fact"><span class="k">Live link</span><span class="v">Private: it holds a shop's customer data. Demo on request.</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <span class="count">from a phone</span>
+    </div>
+    <div class="shots phones">
+      <figure class="shot">
+        <img src="../assets/projects/aren-show/home.webp" width="480" height="1041" loading="lazy" alt="AREN SHOW home screen in Arabic: total amount outstanding, a search bar, and a list of customers showing who has paid and who still owes.">
+        <figcaption><b>Home.</b> The total still owed across all customers, search, and a list showing who has paid and who still owes.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/aren-show/add-customer.webp" width="480" height="1041" loading="lazy" alt="The add-customer form in Arabic, with fields for name, phone number for WhatsApp reminders, an optional note, and a previous debt carried over from the old notebook.">
+        <figcaption><b>Adding a customer.</b> Name, a phone number for WhatsApp reminders, a note, and any old balance carried over from the paper notebook.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/aren-show/sync-backup.webp" width="480" height="1041" loading="lazy" alt="The settings screen in Arabic showing summary statistics, sync status marked as working, a blurred sync code, and buttons for manual backup and Excel export.">
+        <figcaption><b>Sync &amp; backup.</b> Saves to the server whenever there is internet, takes a full copy every night, and exports the whole ledger to Excel. <i>(Sync code blurred.)</i></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>The problem</h2>
+    </div>
+    <div class="prose">
+      <p>Many shops in the region give customers credit and keep track of it in a <b>paper notebook</b>: who took what, who paid, and who needs a reminder. A notebook has no backup, totals are added up by hand, and reminding someone means finding their number in a phone.</p>
+      <p>The app had to fit how these shops already work. That meant <b>Arabic first</b>, simple enough to use at the counter, and reliable when the internet drops, which it often does.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>What I built</h2>
+    </div>
+    <ul class="feature-list">
+      <li><b>Customer accounts with a running balance</b>, and a clear paid / still-owes status for every person.</li>
+      <li><b>A smooth move from paper:</b> each customer's old balance can be carried over from the notebook and is recorded as a previous balance, so no history is lost.</li>
+      <li><b>Phone numbers for WhatsApp reminders</b>, stored with each customer.</li>
+      <li><b>Offline-first:</b> the app keeps working with no connection, then syncs to the server the moment one returns.</li>
+      <li><b>Automatic nightly full backups</b>, plus manual backup files and restore from a file.</li>
+      <li><b>A sync code</b> that lets the same data follow the user to a new device.</li>
+      <li><b>Statistics</b> (customers, transactions, total outstanding) and <b>one-tap Excel export</b> of the full ledger.</li>
+    </ul>
+    <div class="tags" style="margin-top:24px">
+      <span class="tag">PWA</span><span class="tag">Offline-first</span><span class="tag">Cloud sync</span><span class="tag">Nightly backups</span><span class="tag">Excel export</span><span class="tag">RTL / Arabic</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="next-proj">
+      <span class="label">Next project</span>
+      <a href="yazidi-at-school.html">Yazidi At School website →</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Need something like this?</span>
+    <p class="big">Let's talk about your project.</p>
+    <a class="cta" href="mailto:nasralyashassan@gmail.com?subject=Project%20enquiry">nasralyashassan@gmail.com</a>
+    <p class="fine">The first call is free · <a href="../index.html#services" style="color:inherit">See all services</a></p>
+  </footer>
+</div>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

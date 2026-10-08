@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khan Market — POS &amp; Retail Management · Nasr Alyas Hassan</title>
+<meta name="description" content="A point-of-sale and retail-management desktop system in daily use by a market: barcode sales, stock, customer credit, shifts, payroll and backups. Built by Nasr Alyas Hassan.">
+<meta property="og:title" content="Khan Market — POS &amp; Retail Management">
+<meta property="og:description" content="A point-of-sale and retail-management system in daily use by a market. Built by Nasr Alyas Hassan.">
+<meta property="og:image" content="https://nasralyas1.github.io/assets/projects/khan-market/point-of-sale.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="../index.html#work">← All projects</a>
+    <button class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Theme</button>
+  </div>
+
+  <header class="case-hero">
+    <span class="label">Desktop app · SQLite</span>
+    <h1>Khan Market</h1>
+    <p class="sub">Point of sale &amp; retail management</p>
+    <p class="lede">A complete point-of-sale and retail-management system, <b>in real daily use by a market</b>. Barcode sales, stock, customer credit, suppliers, cash shifts and staff, all in one Arabic desktop app.</p>
+    <div class="facts">
+      <div class="fact"><span class="k">My role</span><span class="v">Sole developer, from design to delivery</span></div>
+      <div class="fact"><span class="k">Status</span><span class="v">In daily use by a market</span></div>
+      <div class="fact"><span class="k">Scope</span><span class="v">14 modules, from point of sale to payroll</span></div>
+      <div class="fact"><span class="k">Live link</span><span class="v">Desktop software on the shop's computer. Demo on request.</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <span class="count">the app in use</span>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <img src="../assets/projects/khan-market/point-of-sale.webp" width="1400" height="745" loading="lazy" alt="Khan Market point-of-sale screen in Arabic: a barcode field ready to scan, category filters, product tiles with prices and stock levels, an empty cart, and buttons to pay, cancel or hold the sale. A sidebar lists all 14 modules.">
+        <figcaption><b>Point of sale.</b> The cursor waits in the barcode field, so the cashier just scans. Products by category with price and stock, a cart, and buttons to pay, cancel, or put a sale on hold and come back to it.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/khan-market/dashboard-debts.webp" width="1400" height="745" loading="lazy" alt="Dashboard in Arabic showing today's sales and profit, total customer debt and items below their minimum level, above a table of overdue customer debts with a WhatsApp reminder button on each row. The customers shown are sample data.">
+        <figcaption><b>Dashboard &amp; overdue debts.</b> Today's sales and profit, total customer debt and items running low. Customers who haven't paid in 30, 60 or 90 days, each with a one-click WhatsApp reminder. <i>(Sample data.)</i></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/projects/khan-market/inventory.webp" width="1400" height="743" loading="lazy" alt="Products and stock screen in Arabic: totals for number of products, stock value, items under the alert level, out of stock and needing completion, then a list of products showing purchase price, sale price, profit and stock level.">
+        <figcaption><b>Products &amp; stock.</b> Purchase price, sale price and profit for every item, stock against its alert level, and total stock value. Import from a file, print barcode labels, and finish items that were added in a hurry at the till.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>The problem</h2>
+    </div>
+    <div class="prose">
+      <p>A market sells all day, often on credit, with several staff handling cash. The owner needs to know <b>what is selling, what is running low, who owes what, and whether the till balances</b> at the end of every shift, without adding it up by hand.</p>
+      <p>The system had to be <b>fast at the counter</b>, work in Arabic, keep running whatever the internet is doing, and never lose the shop's records.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>What I built</h2>
+    </div>
+    <ul class="feature-list">
+      <li><b>Barcode point of sale</b> with category filters, quick search by name, and sales that can be held and resumed.</li>
+      <li><b>Stock management:</b> purchase price, sale price and profit per item, low-stock alerts, total stock value, import from a file and barcode label printing.</li>
+      <li><b>Product-expiry tracking</b>, suppliers and purchases.</li>
+      <li><b>Customer credit ledgers</b> with overdue tracking at 30, 60 and 90 days and <b>one-click WhatsApp reminders</b>.</li>
+      <li><b>Daily cash shifts</b> and a cash drawer, invoices, and 80 mm thermal-printer receipts.</li>
+      <li><b>Employees</b> with attendance and payroll, and <b>multiple users</b> with roles and an activity log.</li>
+      <li><b>Dashboard and reports</b> on sales, profit and debts.</li>
+      <li><b>Automatic local and off-machine backups</b>, plus a data-integrity check that reconciles stock, invoices and debts.</li>
+    </ul>
+    <div class="tags" style="margin-top:24px">
+      <span class="tag">Desktop app</span><span class="tag">SQLite</span><span class="tag">POS</span><span class="tag">Inventory</span><span class="tag">Payroll</span><span class="tag">WhatsApp reminders</span><span class="tag">Thermal printing</span><span class="tag">RTL / Arabic</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="next-proj">
+      <span class="label">Next project</span>
+      <a href="aren-show.html">AREN SHOW →</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Need something like this?</span>
+    <p class="big">Let's talk about your project.</p>
+    <a class="cta" href="mailto:nasralyashassan@gmail.com?subject=Project%20enquiry">nasralyashassan@gmail.com</a>
+    <p class="fine">The first call is free · <a href="../index.html#services" style="color:inherit">See all services</a></p>
+  </footer>
+</div>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

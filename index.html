@@ -7,232 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<style>
-  :root {
-    --paper: #F4F6F9;
-    --surface: #FFFFFF;
-    --surface-2: #EEF1F6;
-    --ink: #1A2740;
-    --slate: #55627C;
-    --muted: #7C889F;
-    --line: #DBE1EA;
-    --gold: #A9781F;
-    --gold-soft: #F3E9D4;
-    --accent: #23406E;
-    --good: #2E7D5B;
-    --shadow: 24px 24px 60px rgba(26,39,64,.07);
-    --serif: "Bricolage Grotesque", Georgia, serif;
-    --sans: "IBM Plex Sans", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #0E1524;
-      --surface: #17223A;
-      --surface-2: #1E2B47;
-      --ink: #E9EDF5;
-      --slate: #A7B3CB;
-      --muted: #7B89A6;
-      --line: #26324F;
-      --gold: #E0B65E;
-      --gold-soft: #2A2717;
-      --accent: #7FA6E0;
-      --good: #5FC79B;
-      --shadow: 24px 24px 70px rgba(0,0,0,.35);
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #0E1524;
-    --surface: #17223A;
-    --surface-2: #1E2B47;
-    --ink: #E9EDF5;
-    --slate: #A7B3CB;
-    --muted: #7B89A6;
-    --line: #26324F;
-    --gold: #E0B65E;
-    --gold-soft: #2A2717;
-    --accent: #7FA6E0;
-    --good: #5FC79B;
-    --shadow: 24px 24px 70px rgba(0,0,0,.35);
-  }
-
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    transition: background .3s ease, color .3s ease;
-  }
-  .wrap { max-width: 940px; margin: 0 auto; padding: 0 28px; }
-
-  /* ---- eyebrow / mono labels ---- */
-  .label {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ---- top bar ---- */
-  .topbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 22px 0 0; gap: 16px;
-  }
-  .topbar .mark {
-    font-family: var(--mono); font-size: 13px; letter-spacing: .04em;
-    color: var(--slate);
-  }
-  .topbar .mark b { color: var(--ink); font-weight: 600; }
-  .theme-btn {
-    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--slate);
-    background: transparent; border: 1px solid var(--line);
-    padding: 7px 12px; border-radius: 999px; cursor: pointer;
-    transition: border-color .2s, color .2s;
-  }
-  .theme-btn:hover { border-color: var(--gold); color: var(--ink); }
-  .theme-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-
-  /* ---- hero ---- */
-  header.hero { padding: 60px 0 40px; }
-  .hero .label { display: block; margin-bottom: 20px; }
-  .hero h1 {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.9rem, 8vw, 5.1rem); line-height: .98;
-    letter-spacing: -.02em; margin: 0; text-wrap: balance;
-  }
-  .hero .arabic {
-    font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--slate);
-    margin: 14px 0 0; font-weight: 400; direction: rtl;
-  }
-  .hero .lede {
-    font-size: clamp(1.05rem, 2.4vw, 1.28rem); color: var(--slate);
-    max-width: 33em; margin: 26px 0 0; line-height: 1.62;
-  }
-  .hero .lede b { color: var(--ink); font-weight: 600; }
-
-  /* ---- contact strip ---- */
-  .contact {
-    display: flex; flex-wrap: wrap; gap: 10px 28px;
-    margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line);
-  }
-  .contact a, .contact span {
-    font-family: var(--mono); font-size: 13px; color: var(--slate);
-    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-  }
-  .contact a { color: var(--ink); border-bottom: 1px solid transparent; transition: border-color .2s; }
-  .contact a:hover { border-bottom-color: var(--gold); }
-  .contact .k { color: var(--gold); }
-
-  /* ---- section scaffold ---- */
-  section { padding: 46px 0; border-top: 1px solid var(--line); }
-  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
-  .sec-head h2 {
-    font-family: var(--serif); font-weight: 600;
-    font-size: clamp(1.5rem, 4vw, 2rem); margin: 0; letter-spacing: -.01em;
-  }
-  .sec-head .count { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .1em; }
-
-  /* ---- projects ---- */
-  .project {
-    display: grid; grid-template-columns: 1fr; gap: 4px;
-    padding: 26px; border: 1px solid var(--line); border-radius: 6px;
-    background: var(--surface); margin-bottom: 18px;
-    transition: border-color .25s, transform .25s, box-shadow .25s;
-  }
-  .project:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
-  .project .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  .project h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; margin: 0; letter-spacing: -.01em; }
-  .project .stack { font-family: var(--mono); font-size: 11.5px; color: var(--gold); letter-spacing: .04em; text-align: right; }
-  .project .p-desc { color: var(--slate); margin: 12px 0 16px; max-width: 60ch; }
-  .project ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
-  .project li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--ink); line-height: 1.5; }
-  .project li::before {
-    content: "→"; position: absolute; left: 0; top: 0;
-    font-family: var(--mono); color: var(--gold); font-size: 13px;
-  }
-  .project li .fig { font-family: var(--mono); color: var(--gold); font-weight: 500; }
-  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-  .tag {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
-    color: var(--slate); background: var(--surface-2);
-    padding: 4px 9px; border-radius: 4px;
-  }
-
-  /* ---- skills ---- */
-  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 32px; }
-  .skill-group h4 {
-    font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--gold); margin: 0 0 10px; font-weight: 600;
-  }
-  .skill-group p { margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.65; }
-
-  /* ---- experience / education rows ---- */
-  .row { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-top: 1px solid var(--line); }
-  .row:first-of-type { border-top: none; }
-  .row .when { font-family: var(--mono); font-size: 12.5px; color: var(--muted); letter-spacing: .02em; padding-top: 3px; }
-  .row .what h4 { margin: 0 0 3px; font-size: 1.06rem; font-weight: 600; font-family: var(--serif); }
-  .row .what .org { color: var(--gold); font-size: 13.5px; font-family: var(--mono); }
-  .row .what p { margin: 8px 0 0; color: var(--slate); font-size: 14px; max-width: 62ch; }
-  .row .what .grade { color: var(--slate); font-size: 13px; margin-top: 8px; line-height: 1.6; }
-  .row .what .grade b { color: var(--ink); font-weight: 600; }
-
-  /* ---- services ---- */
-  .svc-intro { color: var(--slate); max-width: 62ch; margin: -12px 0 26px; }
-  .svc-intro b { color: var(--ink); font-weight: 600; }
-  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-  .svc {
-    padding: 22px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
-    display: flex; flex-direction: column; transition: border-color .25s, transform .25s, box-shadow .25s;
-  }
-  .svc:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
-  .svc h3 { font-family: var(--serif); font-weight: 600; font-size: 1.16rem; margin: 0 0 8px; letter-spacing: -.01em; }
-  .svc p { margin: 0; color: var(--slate); font-size: 14.5px; line-height: 1.55; }
-  .svc .proof { margin-top: auto; padding-top: 14px; font-family: var(--mono); font-size: 11.5px; color: var(--gold); letter-spacing: .03em; }
-  .svc.wide { grid-column: 1 / -1; border-color: var(--gold); background: linear-gradient(135deg, var(--surface) 60%, var(--gold-soft)); }
-  .svc.wide p { max-width: 70ch; }
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px 24px; margin-top: 30px; padding: 22px 24px; border-radius: 6px; background: var(--surface-2); }
-  .step { font-size: 14px; color: var(--ink); line-height: 1.5; }
-  .step .n { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--gold); margin-bottom: 4px; }
-  .step span.sub { color: var(--slate); }
-  .svc-fine { margin: 16px 0 0; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .02em; }
-  .hero-cta {
-    display: inline-block; margin-top: 26px; font-family: var(--mono); font-size: 13px;
-    color: var(--paper); background: var(--ink); text-decoration: none;
-    padding: 11px 22px; border-radius: 999px; transition: background .2s, transform .2s;
-  }
-  .hero-cta:hover { background: var(--gold); transform: translateY(-2px); }
-
-  /* ---- footer ---- */
-  footer { padding: 54px 0 70px; border-top: 1px solid var(--line); text-align: center; }
-  footer .label { display: block; margin-bottom: 18px; }
-  footer .big {
-    font-family: var(--serif); font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.6rem);
-    letter-spacing: -.01em; margin: 0 0 22px;
-  }
-  footer a.cta {
-    font-family: var(--mono); font-size: 14px; color: var(--paper);
-    background: var(--ink); text-decoration: none; padding: 13px 26px;
-    border-radius: 999px; display: inline-block; transition: background .2s, transform .2s;
-  }
-  footer a.cta:hover { background: var(--gold); transform: translateY(-2px); }
-  footer .fine { margin-top: 30px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: .04em; }
-
-  @media (max-width: 620px) {
-    .row { grid-template-columns: 1fr; gap: 4px; }
-    .row .when { padding-top: 0; }
-    .project .stack { text-align: left; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -316,7 +91,7 @@
       <span class="count">05 / projects</span>
     </div>
 
-    <article class="project">
+    <article class="project has-page">
       <div class="p-top">
         <h3>Khan Market — POS &amp; Retail Management</h3>
         <span class="stack">Desktop app · SQLite</span>
@@ -331,6 +106,7 @@
       <div class="tags">
         <span class="tag">Desktop app</span><span class="tag">SQLite</span><span class="tag">POS</span><span class="tag">Inventory</span><span class="tag">Payroll</span><span class="tag">Thermal printing</span><span class="tag">RTL / Arabic</span>
       </div>
+      <a class="more" href="projects/khan-market.html">View project: screens &amp; details →</a>
     </article>
 
     <article class="project">
@@ -349,7 +125,7 @@
       </div>
     </article>
 
-    <article class="project">
+    <article class="project has-page">
       <div class="p-top">
         <h3>AREN SHOW — Customer Credit &amp; Receivables</h3>
         <span class="stack">Progressive Web App · offline-first</span>
@@ -363,6 +139,7 @@
       <div class="tags">
         <span class="tag">PWA</span><span class="tag">Offline-first</span><span class="tag">Cloud sync</span><span class="tag">Excel export</span><span class="tag">RTL / Arabic</span>
       </div>
+      <a class="more" href="projects/aren-show.html">View project: screens &amp; details →</a>
     </article>
 
     <article class="project">
@@ -381,7 +158,7 @@
       </div>
     </article>
 
-    <article class="project">
+    <article class="project has-page">
       <div class="p-top">
         <h3>Yazidi@School Website</h3>
         <span class="stack">HTML · CSS · JS · UX/UI</span>
@@ -394,6 +171,7 @@
       <div class="tags">
         <span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Responsive</span><span class="tag">Accessibility</span>
       </div>
+      <a class="more" href="projects/yazidi-at-school.html">View project: live site &amp; screens →</a>
     </article>
   </section>
 
@@ -484,25 +262,6 @@
   </footer>
 </div>
 
-<script>
-  (function () {
-    var btn = document.getElementById('themeToggle');
-    var root = document.documentElement;
-    function current() {
-      var set = root.getAttribute('data-theme');
-      if (set) return set;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    btn.addEventListener('click', function () {
-      var next = current() === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('nah-theme', next); } catch (e) {}
-    });
-    try {
-      var saved = localStorage.getItem('nah-theme');
-      if (saved) root.setAttribute('data-theme', saved);
-    } catch (e) {}
-  })();
-</script>
+<script src="assets/theme.js"></script>
 </body>
 </html>
