@@ -304,3 +304,7 @@ footer .fine { margin-top: 30px; font-family: var(--mono); font-size: 11.5px; co
 .quotes .testimonial blockquote p { font-size: 1.04rem; }
 .quotes .testimonial figcaption { margin-top: auto; padding-top: 16px; }
 .quotes .testimonial figcaption a { color: inherit; }
+
+/* two desktop screenshots side by side, stacking on narrow screens */
+.shots.two { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.shots + .shots { margin-top: 22px; }
